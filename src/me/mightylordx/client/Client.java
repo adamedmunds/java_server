@@ -10,12 +10,16 @@ import java.net.Socket;
 public class Client {
 
 
-    public Client(String packetMessage) throws Exception {
+    public Client() {
 
+
+    }
+
+    public void sendPacket(String packetMessage) throws Exception {
         System.out.println("Creating Client Object");
 
 
-        System.out.println("Connecting to 127.0.0.1 on port " + Server.PORT);
+        System.out.println("Connecting to 127.0.0.1 on port " + Server.PORT + " (http://127.0.0.1:6969)");
         Socket socket = new Socket("127.0.0.1", Server.PORT);
 
 
@@ -30,7 +34,6 @@ public class Client {
         System.out.println(serverPacket.getMessage());
 
         socket.close();
-
     }
 
 }
